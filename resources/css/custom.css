@@ -1,0 +1,39 @@
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    /* Ajoutez plus d'étapes pour l'effet souhaité */
+}
+
+.hover\:shake:hover {
+    animation: shake 0.5s ease-in-out;
+}
+/* custom.css */
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.hover\:bounce:hover {
+    animation: bounce 0.5s infinite; /* 0.5s est la durée de l'animation, 'infinite' répète l'animation indéfiniment */
+}
+/* custom.css */
+
+@keyframes spin {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
+}
+
+.hover\:spin:hover {
+    animation: spin 1s linear infinite; /* 1s est la durée de l'animation, 'infinite' répète l'animation indéfiniment */
+}
+/* custom.css */
+
+@keyframes fade {
+    from { opacity: 1; } /* Opacité initiale */
+    to { opacity: 0; } /* Opacité finale */
+}
+
+.hover\:fade:hover {
+    animation: fade 0.5s ease-in-out; /* 0.5s est la durée de l'animation, 'ease-in-out' est la fonction de transition */
+}
