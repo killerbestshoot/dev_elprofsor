@@ -51,7 +51,7 @@ flex justify-center content-center shadow-2xl">
                 <div class="relative ml-2" x-data="{ open: false }">
                     <div @mouseover="open = true" @mouseleave="setTimeout(() => { open = false }, 1000000)">
                         <span class="font-serif text-lg hover:text-red-500 cursor-pointer">
-                            {{ auth()->user()->name }}
+                           {{ ucfirst(mb_substr(auth()->user()->name, 0, 10)) . '...' }}
                         </span>
                     </div>
                     <div class="absolute top-8 right-0 bg-white border rounded shadow-md p-1 mt-1" x-show="open" @mouseover="open = true" @mouseleave="open = false">

@@ -47,27 +47,30 @@
                 <!-- Champ Mot de passe -->
                 @include('components.label',['text'=>'Paswod'])
                 <input
-                    class="h-10 w-full bg-gray-400 rounded-lg block px-4"
+                    class="h-10 w-full bg-gray-200 rounded-lg block px-4"
                     type="password"
                     name="password"
                     id="password"
+                    placeholder="egz: ***********"
                     value="{{ old('password') }}"
                 >
 
                 <!-- Bouton -->
                 @include('components.button', ['text' => 'konekte'])
             </form>
-            <small class="w-2/6 mx-auto p-2 mt-4 text-center text-lg text-black">
-                oubyen konekte avek
-            </small>
+            <div class="w-full flex items-center justify-center mt-6">
+                <div class="flex-1 border-b border-black"></div>
+                <span class="mx-4 text-lg text-black">oubyen konekte avek</span>
+                <div class="flex-1 border-b border-black"></div>
+            </div>
             <div class="w-3/5 p-2 flex justify-around  mx-auto mt-5 mb-5">
-                <a  href="/auth/redirect/github" class="w-1/5 h-16 flex justify-center items-center hover:shake"><i
+                <a href="/auth/redirect/github" class="w-1/5 h-16 flex justify-center items-center hover:shake"><i
                         class="fa-brands fa-github fa-3x self-center fa-solid"></i></a>
-                <a class="w-1/5 h-16 flex justify-center items-center hover:shake"><i
-                        class="fa-brands fa-facebook fa-3x self-center"></i></a>
+                <a href="/auth/redirect/telegram" class="w-1/5 h-16 flex justify-center items-center hover:shake"><i
+                        class="fa-brands fa-telegram fa-3x self-center"></i></a>
                 <a href="/auth/redirect/google" class="w-1/5 h-16 flex justify-center items-center hover:shake"><i
                         class="fa-brands fa-google fa-3x self-center"></i></a>
-                <a class="w-1/5 h-16 flex justify-center items-center hover:shake"><i
+                <a href="/auth/redirect/discord" class="w-1/5 h-16 flex justify-center items-center hover:shake"><i
                         class="fa-brands fa-discord fa-3x self-center"></i></a>
             </div>
         </div>

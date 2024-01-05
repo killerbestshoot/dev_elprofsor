@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\Auth\ResetPassword;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\OAuthRedirectController;
@@ -10,6 +11,7 @@ use App\Models\User;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -48,7 +50,6 @@ Route::get('/home', function () {
 
 
 Route::prefix('/auth')->group(function () {
-
     Route::get('/redirect/{provider}', [OAuthRedirectController::class, 'redirectToProvider']);
     Route::get('/callback/{provider}', [OAuthRedirectController::class, 'handleProviderCallback'])->name('callback');
 
@@ -86,3 +87,25 @@ Route::get('/setting',[SettingsController::class, 'store'])->name('setting');
 Route::get('/test', function () {
     return view('test');
 });
+//forget password route
+Route::prefix('/password')->group(function(){
+//    return view('auth.passwords.reset');
+    Route::get('/reset',[ResetPassword::class,'index'])->name('password.request');
+    Route::post('/email',[ResetPassword::class,'sendResetLinkEmail'])->name('password.email');
+    Route::get('/reset/{token}',[ResetPassword::class,'reset'])->name('password.reset');
+    Route::post('/update',[ResetPassword::class,'update'])->name('password.update');
+});
+
+//Route::post('/password/email', function (Request $request) {
+//    $request->validate([
+//        'email' =>'required|email',
+//    ]);
+//
+//    $status = Password::sendResetLink(
+//        $request->only('email')
+//    );
+//
+//    return $status === Password::RESET_LINK_SENT
+//       ? back()->with(['status' => __($status)])
+//        : back()->withErrors(['email' => __($status)]);
+//})->name('password.email');

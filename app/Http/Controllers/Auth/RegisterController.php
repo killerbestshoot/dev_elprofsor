@@ -3,15 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
-use Laravel\Socialite\Facades\Socialite;
 
 class RegisterController extends Controller
 {
@@ -33,44 +32,62 @@ class RegisterController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     * @throws ValidationException
      */
+
 
     public function store(Request $request): \Illuminate\Foundation\Application|\Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|\Illuminate\Contracts\Foundation\Application
     {
         /*
         Validation
         */
-       $validated=$request->validate([
+        $validated = $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8',
         ]);
         /*
-        Database Insert
-        */
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
-//        dd($request->all());
-        Auth::login($user);
+         * verify user existance
+         */
 
-        return redirect(RouteServiceProvider::HOME);
+        try {
+            // Verify if the user is already exist
+            $existingUser = User::where('email', $validated['email'])->first();
+            if ($existingUser) {
+                throw ValidationException::withMessages([
+                    'email' => ['imel sa egziste deja'],
+                ]);
+            }
+
+            // Create a new user with the valid credentials
+            $user = User::create([
+                'name' => strtolower($validated['name']),
+                'email' => $validated['email'],
+                'password' => Hash::make($validated['password']),
+            ]);
+
+            // Auth the user newly created
+            Auth::login($user);
+
+            return redirect(RouteServiceProvider::HOME);
+        } catch (ValidationException $validationException) {
+            throw $validationException;
+        } catch (\Throwable $th) {
+            Log::error($th);
+            return back()->withErrors(['message' => 'Gen yon bagay ki mal pase re eseye Tampri']);
+        }
     }
+
 
     /**
      * Display the specified resource.
      */
     public function show(string $id)
     {
-        //
-    }
+        // list all users
+        $users = User::all();
 
-    public function githubCallback() #import user info from github
-    {
-
-
+        return view('auth.register', compact('users'));
     }
 
     /**
@@ -86,7 +103,24 @@ class RegisterController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // modify data about a user, use a try catch
+        try {
+            $validated = $request->validate([
+                'name' =>'required',
+                'email' =>'required|email',
+            ]);
+
+            $user = User::find($id);
+            $user->name = $validated['name'];
+            $user->email = $validated['email'];
+            $user->save();
+
+            return redirect(RouteServiceProvider::HOME);
+        } catch (\Throwable $th) {
+            Log::error($th);
+            return back()->withErrors(['message' => 'Gen yon bagay ki mal pase re eseye Tampri']);
+        }
+
     }
 
     /**
@@ -94,6 +128,16 @@ class RegisterController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        //delete a user in a try statement
+        try {
+            $user = User::find($id);
+            $user->delete();
+
+            return redirect(RouteServiceProvider::HOME);
+        } catch (\Throwable $th) {
+            Log::error($th);
+            return back()->withErrors(['message' => 'Gen yon bagay ki mal pase re eseye Tampri']);
+        }
+
     }
 }
