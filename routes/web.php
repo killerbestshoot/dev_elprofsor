@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -48,7 +49,6 @@ Route::get('/home', function () {
 
 
 Route::prefix('/auth')->group(function () {
-
     Route::get('/redirect/{provider}', [OAuthRedirectController::class, 'redirectToProvider']);
     Route::get('/callback/{provider}', [OAuthRedirectController::class, 'handleProviderCallback'])->name('callback');
 
