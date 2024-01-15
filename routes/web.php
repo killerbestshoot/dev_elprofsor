@@ -55,13 +55,14 @@ Route::prefix('/auth')->group(function () {
 
 });
 
-Route::prefix('/article')->group(function (){
-    Route::get('/', [ArticleController::class, 'index'])->name('article.index');
-    Route::get('/create', [ArticleController::class, 'create'])->name('article.create');
-    Route::post('/store', [ArticleController::class,'store'])->name('article.store');
-    Route::get('/edit/{id}', [ArticleController::class, 'edit'])->name('article.edit');
-    Route::put('/update/{id}', [ArticleController::class, 'update'])->name('article.update');
-    Route::delete('/destroy/{id}', [ArticleController::class, 'destroy'])->name('article.destroy');
+Route::prefix('/')->group(function (){
+    Route::get('article', [ArticleController::class, 'index'])->middleware('auth')->name('article.index');
+    Route::get('article/{title}', [ArticleController::class,'show'])->middleware('auth')->name('article.show');
+    Route::get('create', [ArticleController::class, 'create'])->middleware('auth')->name('article.create');
+    Route::post('store', [ArticleController::class,'store'])->middleware('auth')->name('article.store');
+    Route::get('edit/{title}', [ArticleController::class, 'edit'])->name('article.edit');
+    Route::put('update/{title}', [ArticleController::class, 'update'])->name('article.update');
+    Route::delete('destroy/{title}', [ArticleController::class, 'destroy'])->name('article.destroy');
 });
 
 Route::prefix('/media')->group(function (){

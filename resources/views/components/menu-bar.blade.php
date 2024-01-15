@@ -11,17 +11,20 @@
 
     <nav class="w-11/12 mx-auto mt-4 box-content p-2 z-30 h-10 rounded-lg bg-gray-800 text-white hover:shadow-blue-600/90
 flex justify-center content-center shadow-2xl">
-        <ul class="flex justify-evenly flex-grow mr-5 ml-5 h-full font-serif">
+        <ul class="flex justify-evenly flex-grow mr-5 ml-5 h-full  font-serif">
             <li class="flex items-center justify-center px-4">
                 <a class="text-white hover:text-blue-600 self-center" href="{{Route('media.index')}}">Fim Ak Seri</a>
             </li>
-            <li class="flex items-center justify-center">
+            <li class="flex items-center justify-center px-4">
+                <a class="text-white hover:text-blue-600 self-center" href="{{Route('media.index')}}">Diskisyon</a>
+            </li>
+            <li class="flex items-center justify-center px-1">
                 <a class="text-white hover:text-blue-600 self-center" href="{{Route('article.index')}}">Ekri atik</a>
             </li>
-            <li class="flex items-center justify-center">
+            <li class="flex items-center justify-center px-1">
                 <a class="text-white hover:text-blue-600 self-center" href="{{Route('events.index')}}">Gade evenman</a>
             </li>
-            <li class="flex items-center justify-center">
+            <li class="flex items-center justify-center px-1">
                 <a class="text-white hover:text-blue-600 self-center" href="/contact">Nou</a>
             </li>
         </ul>
