@@ -43,6 +43,7 @@ class ArticleController extends Controller
             'description' => 'required',
             'category' => 'required',
             'tags'=>'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             // Ajoutez d'autres règles de validation en fonction de vos besoins
         ]);
 
@@ -62,6 +63,8 @@ class ArticleController extends Controller
                 // Ajoutez d'autres champs de votre modèle en fonction de vos besoins
             ]);
 
+            $imagePath = $request->file('image')->store('images', 'public');
+            $article->image = $imagePath;
 
             // Sauvegarde de l'article dans la base de données
             $article->save();

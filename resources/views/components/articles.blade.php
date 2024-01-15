@@ -11,8 +11,8 @@
 
                     <div class="flex justify-center w-full mx-auto">
                         <div class="w-2/4 flex justify-evenly items-center">
-                            <i class="fa-thin fa-thumbs-down fa-2xl"></i>
-                            <i class="fa-thin fa-heart"></i>
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-solid fa-thumbs-down"></i>
                         </div>
                         <a href="{{ route('article.show', ['title' => $article->title]) }}" class="w-2/4 text-center text-blue-500 hover:text-blue-700 dark:hover:text-blue-300">
                             Lire plus

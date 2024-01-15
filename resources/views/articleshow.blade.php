@@ -8,7 +8,7 @@
         <div class="w-11/12 mx-auto my-10 flex flex-col justify-center">
             <div class="w-10/12 mx-auto flex justify-center  items-baseline">
                 <div class="w-52 h-72 bg-slate-800">
-                    <img src="/img/1280x1280_money_heist_2019_1578252302.jpg" alt="article image" class="w-full h-full">
+                    <img src="{{ asset('storage/' . $article->image) }}" alt="article image" class="w-full h-full">
 
                 </div>
                 <div class="w-3/5 mx-auto">
