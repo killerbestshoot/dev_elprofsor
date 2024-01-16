@@ -14,8 +14,8 @@
                 </h1>
             </div>
         @endif
-        <div class="fixed bottom-10 right-20 rounded-full h-12 w-36 z-50 flex transition hover:shake">
-            <a href="{{ route('article.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white text-center w-full h-full font-bold py-3 rounded-full">Ekri Atik</a>
+        <div class="fixed bottom-10 right-20 rounded-full h-12 w-36 z-50 flex transition hover:shake ">
+            <a href="{{ route('article.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white text-center w-full h-full font-bold py-3 rounded-full hover:shadow-inner hover:shadow-slate-700">Ekri Atik</a>
         </div>
 
     </div>

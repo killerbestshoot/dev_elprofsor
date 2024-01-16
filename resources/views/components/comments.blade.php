@@ -1,4 +1,4 @@
-<div class="comment p-4 border rounded-md mb-4">
+<div class="comment p-4 border rounded-md mb-4 shadow-inner shadow-slate-900">
     <div class="user-info flex justify-between items-center mb-2">
         <span class="font-bold text-lg">Nom d'utilisateur</span>
         <div class="flex items-center">

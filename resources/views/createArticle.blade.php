@@ -7,12 +7,12 @@
         @include('components.menu-bar')
 
         <div class="w-11/12 mx-auto h-auto bg-white pb-10 p-6 my-10 rounded-lg shadow-md  flex flex-col justify-center items-start">
-            <div class="w-6/12 mx-auto p-3 mb-4 ">
+            <div class="sm:w-11/12 md:w-11/12 lg:w-6/12 mx-auto p-3 mb-4 ">
                 <h1 class="font-serif text-2xl font-bold text-center">
                     Ekri Yon Nouvo Atik
                 </h1>
             </div>
-            <form action="{{ route('article.store') }}" method="POST" class="w-full flex justify-around items-start p-2" enctype="multipart/form-data">
+            <form action="{{ route('article.store') }}" method="POST" class="w-full  sm:flex-col md:flex-col lg:flex justify-around  items-start p-2" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-10 w-1/4 h-20 p-2">
