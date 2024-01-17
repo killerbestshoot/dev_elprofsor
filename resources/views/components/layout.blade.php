@@ -14,11 +14,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Damion&family=Gloria+Hallelujah&family=Merienda:wght@500;800&family=Rock+Salt&display=swap');
     </style>
 </head>
-<body class="bg-black flex flex-col justify-center min-h-screen">
+<body class="bg-black flex flex-col justify-center min-h-screen min-w-full p-0 m-0">
 {{ $slot }}
 <footer class="h-4/5 text-white border-t-2 border-white flex flex-col justify-center items-center w-full p-4">
     <div class="h-5/6 w-1/5 mx-auto  p-2 mb-10  mt-6">

@@ -3,12 +3,12 @@
         El Profsor Community | koneksyon
     </x-slot>
     <main class="min-h-screen min-w-full flex flex-col items-center justify-center bg-bglogin bg-center bg-cover">
-        <div class="w-3/6  mx-auto h-4/5 p-5 self-center">
-            <h1 class="text-4xl font-bold font-serif text-center text-white mb-5">
+        <div class="w-full md:w-3/6 lg:w-3/6  mx-auto h-4/5 p-5 self-center mb-20">
+            <h1 class="text-4xl font-bold font-serif text-center text-black lg:text-white mb-5">
                 Koneksyon
             </h1>
 
-            <form class="justify-center w-4/6 mx-auto rounded-2xl bg-white bg-opacity-20 shadow-red-700/95" method="POST" action="login">
+            <form class="w-full lg:justify-center lg:w-4/6 mx-auto rounded-2xl bg-white bg-opacity-20 shadow-red-700/95" method="POST" action="login">
                 @csrf
                <div class="flex flex-col justify-center w-full p-5 pb-1">
                    @include('components.label',['text'=>'Imel'])
@@ -28,6 +28,13 @@
 {{--                       @error('email')--}}
 {{--                       <p class="text-red-500 text-xs mt-2">--}}
                    </div>
+{{--                   //incorect password message--}}
+                   @error('email')
+                   <div class="bg-red-100 border border-red-400 text-red-700 text-center px-4 py-3 rounded relative" role="alert">
+                       {{ $message }}
+                   </div>
+
+                   @enderror
                    @include('components.button',['text'=>'Konekte'])
 {{--                   // add a don't have account link--}}
                    <a href="{{route('register')}}" class="text-blue-600 mt-6 hover:text-blue-900 mx-auto p-0">

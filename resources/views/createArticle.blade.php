@@ -12,10 +12,10 @@
                     Ekri Yon Nouvo Atik
                 </h1>
             </div>
-            <form action="{{ route('article.store') }}" method="POST" class="w-full  sm:flex-col md:flex-col lg:flex justify-around  items-start p-2" enctype="multipart/form-data">
+            <form action="{{ route('article.store') }}" method="POST" class="w-full sm:flex sm:flex-col sm:justify-between lg:flex lg:flex-row lg:justify-around lg:items-start sm:p-1 lg:p-2" enctype="multipart/form-data">
                 @csrf
 
-                <div class="mb-10 w-1/4 h-20 p-2">
+                <div class="mb-10 sm:w-full lg:w-1/4 sm:min-h-screen lg:min-h-20 sm:p-1 lg:p-2">
                     <label for="title" class="block text-gray-700 font-bold">Tit:</label>
                     <input type="text" name="title" id="title" class="rounded-lg text-white bg-slate-800 mb-3 border-gray-300 p-2 w-full" placeholder="Ekri tit la" required>
 
@@ -26,13 +26,13 @@
                     <input type="text" name="tags" id="tags" class="rounded-lg text-white bg-slate-800  border-gray-300 p-2 w-full mb-3" placeholder="Ekri tag.." required>
 
                     <label for="image" class="block text-gray-700 font-bold ">Imaj</label>
-                    <input type="file" name="image" accept="image/*" class="bg-slate-800 font-serif text-white rounded-lg " required>
+                    <input type="file" name="image" accept="image/*" class="bg-slate-800 font-serif text-white rounded-lg w-full" required>
                     <input type="hidden" name="author" value="{{auth()->user()->name }}">
 
 
                 </div>
 
-                <div class="mb-20 w-3/5">
+                <div class="sm:mb-20 lg:mb-5 sm:w-full lg:w-3/5 ">
                     <label for="description" class="block text-gray-700 font-bold">Atik:</label>
                     <textarea
                         name="description"
@@ -42,7 +42,7 @@
                         required
                     ></textarea>
 
-                    <button type="submit" class="bg-slate-800 hover:shake hover:shadow-blue-800/70 text-white font-bold py-2 px-4 rounded-full">Sove Atik la</button>
+                    <button type="submit" class=" bg-slate-800 hover:shake hover:shadow-blue-800/70 text-white font-bold py-2 px-4 rounded-full">Sove Atik la</button>
                 </div>
 
                 <!-- Ajoutez d'autres champs selon vos besoins -->

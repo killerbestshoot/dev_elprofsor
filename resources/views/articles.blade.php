@@ -8,7 +8,7 @@
         @if(count($articles) > 0)
             @include('components.articles')
         @else
-            <div class="w-2/4 mx-auto rounded-lg p-10 bg-gray-500 my-auto">
+            <div class="sm:w-11/12 lg:w-2/4 mx-auto rounded-lg p-10 bg-gray-500 my-auto">
                 <h1 class="w-11/12 mx-auto text-center py-3 text-2xl font-semibold text-gray-700 dark:text-gray-200">
                     Pa gen Atik
                 </h1>

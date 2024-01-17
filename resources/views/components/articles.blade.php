@@ -1,7 +1,13 @@
-<div class="w-11/12 mx-auto my-10 h-3/4 grid gap-3 lg:gap-4 min-gap-20 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 ">
-    @foreach($articles as $article)
+<div class="w-full md:w-9/12 lg:w-11/12 md:mx-auto
+            lg:mx-auto py-4 px-2 my-10 grid gap-2 lg:gap-3 lg:grid-cols-3
+            min-gap-20 grid-cols-1 sm:grid-cols-2
+            md:grid-cols-2">
+
+@foreach($articles as $article)
         <div
-            class="bg-white shadow-md flex items-center mx-auto rounded p-2 mb-4 w-80 hover:z-40 hover:shake hover:shadow-black hover:shadow-inner hover:scale-105">
+            class="bg-white shadow-md flex lg:shrink md:items-center sm:mx-auto md:mx-auto lg:items-center lg:mx-auto lg:rounded
+            p-2 mb-4 sm:w-10/12 md:w-72 lg:w-80 hover:z-40 lg:hover:shake hover:shadow-black lg:duration-700 md:duration-700
+            hover:shadow-inner md:hover:scale-105 lg:hover:scale-105">
             <div class="flex items-center h-full w-full flex-col justify-between mb-4 mt-1 p-1">
                 <h1 class="w-11/12 mx-auto text-center py-3 text-2xl font-semibold text-gray-700 dark:text-gray-700">
                     {{ $article->title }}
