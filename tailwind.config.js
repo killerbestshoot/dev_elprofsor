@@ -20,6 +20,8 @@ module.exports = {
                 'bodypic': "url('/public/img/elprofsor.jpg')",
                 'bodypic2':"url('/public/img/1136x640_money_heist_team_illustration.jpg')",
                 'bglogin':"url('/public/img/1280x1280_money_heist_2019_1578252302.jpg')",
+
+
                 // Remplacez '/path/to/your/image.jpg' par le chemin réel de votre image
             },
         },
