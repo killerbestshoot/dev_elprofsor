@@ -1,0 +1,27 @@
+{
+  "public/img/1136x640_money_heist_team_illustration.jpg": {
+    "file": "assets/1136x640_money_heist_team_illustration-Y2Tz10TH.jpg",
+    "src": "public/img/1136x640_money_heist_team_illustration.jpg"
+  },
+  "public/img/1280x1280_money_heist_2019_1578252302.jpg": {
+    "file": "assets/1280x1280_money_heist_2019_1578252302-z5COhQrn.jpg",
+    "src": "public/img/1280x1280_money_heist_2019_1578252302.jpg"
+  },
+  "public/img/elprofsor.jpg": {
+    "file": "assets/elprofsor-rKEGc0aN.jpg",
+    "src": "public/img/elprofsor.jpg"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-UJ2APulz.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/js/app.js": {
+    "css": [
+      "assets/app-00TlZpTJ.css"
+    ],
+    "file": "assets/app-3g_E1ERn.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  }
+}

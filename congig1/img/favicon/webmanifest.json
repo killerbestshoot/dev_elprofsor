@@ -1,0 +1,22 @@
+{
+   "name":"el profsor community",
+   "short_name":"El",
+   "description":"Votre Destination pour l'Art du Divertissement et de l'Innovation Technologique ! Explorez l'univers fascinant du cinéma, des séries télévisées et des dernières avancées technologiques sur https://elprofsorcommunity509.site. Découvrez des critiques cinématographiques, analyses de séries, articles sur les dernières technologies, interviews exclusives, et bien plus encore. Rejoignez-nous pour une expérience enrichissante où la magie du cinéma rencontre l'ingéniosité des innovations technologiques.",
+   "start_url":"/",
+   "display":"standalone",
+   "background_color":"#ffffff",
+   "theme_color":"#ffffff",
+   "lang":"creole-ht",
+   "icons":[
+      {
+         "src":"/img/favicon/android-chrome-192x192.png",
+         "sizes":"192x192",
+         "type":"image/png"
+      },
+      {
+         "src":"/img/favicon/android-chrome-512x512.png",
+         "sizes":"512x512",
+         "type":"image/png"
+      }
+   ]
+}
