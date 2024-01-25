@@ -8,11 +8,11 @@
       <jdbc-url>jdbc:postgresql://192.168.207.185:5432/communityel</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="communityel@192.168.207.185 [2]" uuid="24d15853-1984-4913-b221-5131dcb8dd20">
+    <data-source source="LOCAL" name="communityel@192.168.240.185" uuid="24d15853-1984-4913-b221-5131dcb8dd20">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://192.168.207.185:5432/communityel</jdbc-url>
+      <jdbc-url>jdbc:postgresql://192.168.240.185:5432/communityel</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
     <data-source source="LOCAL" name="communityel@localhost" uuid="d17d169f-8dc8-4d01-9e82-e58bbae2c313">
